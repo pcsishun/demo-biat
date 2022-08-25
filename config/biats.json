@@ -1,0 +1,39 @@
+{
+    "STIMULI": {
+        "Flowers": ["Orchid", "Lily", "Violet", "Daisy"],
+        "Insects": ["Ant", "Locust", "Bee", "Wasp"],
+        "Asian": ["Curry", "Karate", "Beijing", "Sony"],
+        "American": ["Burger", "NFL", "Boston", "Microsoft"],
+        "Progressive": ["LGBTQ", "Multiculturalism", "Equality", "Opportunity"],
+        "Conservative": ["Tradition", "Stability", "Patriotism", "Responsibility"],
+        "Progressive (Exp)": ["Social Welfare", "Collectivism", "Equality", "Diversity"],
+        "Conservative (Exp)": ["Individualism", "Nationalism", "Self-Reliance", "Tradition"],
+        "Globalisation": ["Travel", "Markets", "Diversity", "Wealth"],
+        "Feminism": ["Empowerment", "Liberation", "Equality", "Progressive"],
+        "Anti-feminism": ["Inequality", "Housewife", "Traditional", "Obedience"],
+        "Feminism (Exp)": ["Equality", "Rights", "Reproductive Freedom", "Women"],
+        "Anti-feminism (Exp)": ["Paternalism", "Patriarchy", "Inequality", "Men's Rights"],
+        "Veganism": ["Greens", "Tofu", "Produce", "Salad"], 
+        "Stoicism": ["Patience", "Calmness", "Acceptance", "Dispassion"], 
+        "Australian (A)": ["Footy", "Kangaroo", "Outback", "Aussie"],
+        "Multiculturalism (A)": ["Diversity", "Culture", "Migrant", "International"],
+        "Man-made Climate Change": ["Emissions", "Consumerism", "Coal", "Drilling"],
+        "Natural Climate Cycles": ["Natural", "Non-Sense", "Cycles", "Weather"],
+        "Man-made Climate Change (Exp)": ["Emissions", "Coal", "Fossil Fuels", "Greenhouse Gas"],
+        "Natural Climate Cycles (Exp)": ["Weather", "Drought", "Floods", "Heatwave"],
+        "Left Media": [{"name": "CNN", "img": "cnn.png"}, {"name": "The Independent", "img": "The-Independent-Logo.png"}, {"name": "The Guardian", "img": "theguardian.png"}, {"name": "The New Yorker", "img": "TheNYer.png"}],
+        "Conservative Media": [{"name": "Breitbart", "img": "breitbart.png"}, {"name": "Daily Mail", "img": "dailymail.png"}, {"name": "Fox", "img": "fox.png"}, {"name": "The Sun", "img": "thesun.png"}],
+        "Qualitative": ["Dynamic", "Subjective", "Rich", "Individual"], 
+        "Quantitative Research": ["Simplification", "Replicable", "Objective", "Comparable"],
+        "Australian (B)": ["Colonial Heritage", "Anzac", "Whiteness", "Cricket"],
+        "Multiculturalism (B)": ["Cultural Diversity", "Cosmopolitan", "Dynamic", "Colored"]
+    },
+    "WARMUP_PAIR": ["Flowers", "Insects"],
+    "STIMULI_PAIRS":[["Asian", "American"],["Flowers", "Insects"], ["Progressive", "Conservative"]],
+    "IMAGE_STIMULI": ["Left Media", "Conservative Media"],
+    "ATTITUDES": {
+        "Good": ["Wonderful", "Best", "Superb", "Excellent"],
+        "Bad": ["Awful", "Horrible", "Terrible", "Worst"]
+    },
+    "VERSION": "2.6"
+}

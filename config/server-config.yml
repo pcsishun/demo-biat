@@ -1,0 +1,3 @@
+default:
+  app-name: 'Brief Implicit Association Test (BIAT) Log Server'
+  version: 2.6

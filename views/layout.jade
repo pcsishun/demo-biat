@@ -1,0 +1,232 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title= title
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    link(rel='stylesheet', href='/jquery-ui-1.12.1.custom/jquery-ui.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    article
+      header
+        h1 (Brief) Implicit Association Test
+      section.step.step_start
+        h2 Participant and Experiment Group
+        .cf
+          p To be filled in by the experimenter.
+          section.first
+            h3 Participant ID
+            // <h4><label for="create_proband">Create new participant</label></h4>
+            form
+              input#participant_id(type='text', required='')
+              // <input type="submit" value="Create">
+              //
+                <h4>Starting task</h4>
+                <form class="list">
+                <div>
+                <div>
+                <input type="radio" name="starting_task" id="starting_task_1" value="1">
+                <label for="starting_task_1">Task I</label>
+                </div>
+                <div>
+                <input type="radio" name="starting_task" id="starting_task_2" value="2">
+                <label for="starting_task_2">Task II</label>
+                </div>
+                </div>
+                </form>
+          section.second
+            h3 Experiment Group
+            //
+              <h4><label for="create_task">Create new task</label></h4>
+              <form>
+              <input type="text" id="create_task" required>
+              <input type="submit" value="Create">
+              </form>
+            // <h4>Choose task</h4>
+            form.list
+              div
+                div
+                  input#group_1(type='radio', name='experiment_group', value='1')
+                  label(for='group_1') Group 1
+                div
+                  input#group_2(type='radio', name='experiment_group', value='2')
+                  label(for='group_2') Group 2
+                //
+                  <div>
+                  <input type="radio" name="experiment_group" id="group_3" value="3">
+                  <label for="group_3">Group 3</label>
+                  </div>
+                  <div>
+                  <input type="radio" name="experiment_group" id="group_4" value="4">
+                  <label for="group_4">Group 4</label>
+                  </div>
+                  <div>
+                  <input type="radio" name="experiment_group" id="group_5" value="5">
+                  <label for="group_5">Group 5</label>
+                  </div>
+                  <div>
+                  <input type="radio" name="experiment_group" id="group_6" value="6">
+                  <label for="group_6">Group 6</label>
+                  </div>
+        hr
+        .alert.alert-warning(role='alert')
+        button Start
+        // <p class="go_back">or go <a href="#">back to the overview page</a></p>
+      section.step.step_pre_study
+        h2= title
+        .cf
+          p
+            | The implicit association test measures the differential association of two target concepts with an attribute. By measuring the time it takes you to connect concepts and attributes, implicit biases can emerge. Under a concept umbrella, such as 
+            i Conservative
+            |  vs. 
+            i Progressive
+            | , for example, nouns classically associated with each need to be categorized. This pre-study aims at 1) introducing the mechanism of the brief version of the implicit association test (BIAT) and 2) collecting feedback on the word pair associations.
+            br
+            br
+            |                   Thanks for helping out! Feel free to provide some details (optional) and select your BIAT category. If you are interested in participating in the follow-up studies and/or the results of this research, you can leave us your email address.
+          section.first
+            h3 For BIAT Newbies:
+            button.btn-warmup(type='button') Warmup Round
+            h3 Topic Selection
+            .input-group.mb-3
+              .input-group-prepend
+                label.input-group-text(for='biat-selection-dropdown') BIAT
+              select#biat-selection-dropdown.custom-select
+                option(selected='') Choose...
+            //
+              <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="warmup-check">
+              <label class="form-check-label" for="warmup-check">include warmup round (Flowers vs. Insects)</label>
+              </div>
+          section.second
+            h3 Please provide a name: 
+            //- h3 Demographics 
+            //- (Optional)
+            //- input#pre_study_participant_id(type='text', placeholder='Name')
+            //- input#pre_study_participant_age(type='text', placeholder='Age')
+            //- input#pre_study_participant_background(type='text', placeholder='Profession/Background')
+            //- input#pre_study_participant_country(type='text', placeholder='Country')
+            //- input#pre_study_participant_zipcode(type='text', placeholder='Postcode')
+            input#pre_study_participant_email(type='text', placeholder='Name')
+            //- input#pre_study_participant_email(type='text', placeholder='Email (Optional)')
+            //- h4 Gender
+            //- form.list
+            //-   div
+            //-     div
+            //-       input#pre_study_gender_f(type='radio', name='pre_study_gender', value='female')
+            //-       label.gender(for='pre_study_gender_f') Female
+            //-     div
+            //-       input#pre_study_gender_m(type='radio', name='pre_study_gender', value='male')
+            //-       label.gender(for='pre_study_gender_m') Male
+            //-     div
+            //-       input#pre_study_gender_x(type='radio', name='pre_study_gender', value='none')
+            //-       label.gender(for='pre_study_gender_x') I'd rather not say
+            //-     div
+            //-       input#pre_study_gender_o(type='radio', name='pre_study_gender', value='other')
+            //-       input#pre_study_gender_other(type='text', placeholder='Prefer to self-describe')
+        hr
+        .alert.alert-warning(role='alert')
+        button.btn-start Start
+        // <p class="go_back">or go <a href="#">back to the overview page</a></p>
+      section.step.step_BIAT
+        h2#step_BIAT_header(style='display:none') Instructions
+        #BIAT_test(style='display:none')
+          #BIAT_top
+            p#attributeStimuliCategory.attributeClass Category
+            p or
+            p#attitudeStimuliCategory.attitudeClass Attitude
+          p#BIAT_instructions
+          p#BIAT_word
+          img#BIAT_img_stimulus
+          .alert.alert-danger(role='alert') X
+      
+      //- include includes/pre_study_survey.jade
+      include includes/d_score_results.jade
+
+      section#BIAT_end.step.step_BIAT_end
+        p
+          strong Notify the experimenter
+          |  that you are ready to continue with the next task. Then, come back and fill in the next questionnaire.
+        button Next
+      section.step.step_demographics
+        h2 Demographics
+        .cf
+          h3 Welcome to the experiment!
+          p Please fill in the following demographic information:
+          section.first
+            h3 Age
+            input#age(type='text', required='')
+          section.second
+            h3 Gender
+            form.list
+              div
+                div
+                  input#gender_f(type='radio', name='gender', value='female')
+                  label(for='gender_f') Female
+                div
+                  input#gender_m(type='radio', name='gender', value='male')
+                  label(for='gender_m') Male
+                div
+                  input#gender_o(type='radio', name='gender', value='other')
+                  label(for='gender_o') Other
+                div
+                  input#gender_x(type='radio', name='gender', value='none')
+                  label(for='gender_x') I'd rather not say
+          section.third
+            h3 Profession & Background
+            input#profession(type='text', required='')
+        hr
+        .alert.alert-warning(role='alert')
+        button Next
+      section.step.step_reading_task
+        h2 What Airlines Fly the Boeing 737 Max 8
+        p
+          | The plane that crashed on Sunday outside Addis Ababa, Ethiopia, revived questions about a new Boeing model that is growing in popularity among airlines.
+        p
+          | The crash was the second in just five months involving the model, a Boeing 737 Max 8. Concerns first surfaced after a Lion Air flight crashed near Indonesia in October, killing all 189 people aboard.
+        p
+          | The 737 class is a workhorse for airlines worldwide, and the single-aisle 737 Max has been Boeing’s best-selling plane ever. More than 350 of the Max 8 planes are currently registered, and many more are on order.
+        p
+          | Max 8 planes flew more than 8,500 flights worldwide in the week beginning Feb. 25, according to Flightradar24, a flight tracking service.
+        p
+          | Two American carriers that use the planes heavily — Southwest Airlines and American Airlines — have said they will continue to fly them. But on Monday, China and Indonesia ordered their airlines to ground all of the Max 8 jets they operate. Some other carriers, including Cayman Airways and Comair, followed suit.
+        p
+          | Investigators have not yet determined the cause of the Ethiopia crash, but they recovered both the flight data recorder and the cockpit voice recorder on Monday.
+        p
+          | Some circumstances of the crash, such as unusual altitude changes after takeoff, were similar to those in the Lion Air flight.
+        p
+          | Five months later, the causes of the Indonesian crash are still under investigation. But the tragedy revealed that Boeing and the United States Federal Aviation Administration determined that pilots did not need to be informed of changes to the Max 8’s flight control system, which may have contributed to the crash.
+        button Next
+      section.step.step_pre_study_warmup_done
+        h2 That's it!
+        p It's that easy! Now you're ready to select an attribute pair and give it a go!
+        .alert.alert-warning(role='alert')
+        button.bth-restart Let's go!
+      section.step.step_pre_study_thanks
+        h2 That's it!
+        p Thanks for your participation! Feel free to try out another BIAT pair:
+        .alert.alert-warning(role='alert')
+        button Restart
+      section.step.step_thanks
+        h2 That's it!
+        .alert.alert-warning(role='alert')
+        h4 Thanks for your participation!
+
+    script.
+      const biatConfig= !{biatConfig};
+      const STIMULI= biatConfig['STIMULI'];
+      const WARMUP_PAIR= biatConfig['WARMUP_PAIR'];
+      const STIMULI_PAIRS= biatConfig['STIMULI_PAIRS'];
+      const IMAGE_STIMULI= biatConfig['IMAGE_STIMULI'];
+      const attitudes= biatConfig['ATTITUDES'];
+      const VERSION= biatConfig['VERSION'];
+
+    block biatsetup
+
+    script(src='https://code.jquery.com/jquery-3.4.1.min.js', integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
+    script(src='/jquery-ui-1.12.1.custom/jquery-ui.min.js')
+    script(src='/javascripts/BIAT.js')
+    script(src='/javascripts/default.js')
+
