@@ -1,11 +1,14 @@
 FROM node:17.8-alpine
 
-RUN apk add --no-cache tini && mkdir -p /usr/src/app
+RUN  mkdir -p /usr/src/app
 
 WORKDIR  /usr/src/app
-COPY package.json .
-RUN npm i && npm i cache clean --force
+COPY . .
+# COPY package-lock.json .
+
+RUN npm install
+
 COPY . .
 EXPOSE 3000
 
-CMD ["/sbin/tini", "--", "node", "index.js"]
+CMD ["npm", "start"]
